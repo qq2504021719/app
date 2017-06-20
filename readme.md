@@ -1,3 +1,5 @@
 #### React 学习
 
-https://ke.qq.com/webcourse/index.html#course_id=203313&term_id=100240778&taid=1277855849978417&vid=s14139cbg2q
+###reactx reacr学习
+# 环境搭建、模板(index.html)、例子(react1.html) 
+# 组件 创建组件类、样式(zhujian.html)

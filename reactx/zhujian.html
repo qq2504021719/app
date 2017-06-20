@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<!-- 核心库 -->
+	<script type="text/javascript" src="./build/react.min.js" charset="utf-8"></script>
+	<!-- 提供与dom相关的功能 -->
+	<script type="text/javascript" src="./build/react-dom.min.js" charset="utf-8"></script>
+	<!-- 将JSX语法转换成JavaScript语法 -->
+	<script type="text/javascript" src="./build/browser.min.js" charset="utf-8"></script>
+</head>
+<body>
+	<!-- react渲染的模板内容会插入到这个dom节点中,作为一个容器 -->
+	<div id="react-container">
+		
+	</div>
+	<style type="text/css">
+		body{
+		}
+	</style>
+</body>
+<!-- 在React开始中,使用JSX,跟javascript不兼容,在使用jsx的地方,要设置type="text/babel" -->
+<!-- babel是一个转换编译器,ES6转换成可以在浏览器中运行的代码 -->
+<script type="text/babel">
+	var container = document.getElementById("react-container");
+	/*
+	 * 创建一个组件类,用于输出React Hellow
+	 * 1、React中创建组件类以大写字母开头,驼峰语法,后缀名大写Html
+	 * 2、在React中使用React,createClass方法创建一个组件类
+	 * 3、核心代码:每个组件类都必须实现自己的render方法。输出定义好的组件模板。返回值:null、false、组件模板
+	 * 4、组件类只能包含一个顶层标签
+	 */
+	
+
+	/*
+	 * 组件样式,3种
+	 * 1、内联样式
+	 * 2、对象样式
+	 * 3、选择器样式
+	 * 注意: 在React和HTML5中设置样式时的书写格式有区别的
+	   1、HTML5以;结尾
+		  React以,结尾
+	   2、HTML5中key、value都不加引号
+	      React中属于JavaScript对象,key的名字不能出现"-",需要使用驼峰命名法。如果value为字符串,需要加引号。
+	   3、HTML5中,value如果是数字,需要带单位,
+	      React中不需要带单位
+	 */
+	 var text = 'React Hellow';
+	 var ptext = '第二行p标签';
+	  var HelloMessage = React.createClass({
+		render:function(){
+			return (
+				<div style={{width:"100%",textAlign:"center",fontFamily:"微软雅黑"}}>
+					<h1>{text}</h1>
+					<p>{ptext}</p>
+				</div>
+			);
+		}
+	});
+	ReactDOM.render(<HelloMessage/>,container);
+
+</script>
+</html>
