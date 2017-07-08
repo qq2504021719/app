@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<!-- 核心库 -->
+	<script type="text/javascript" src="./build/react.min.js" charset="utf-8"></script>
+	<!-- 提供与dom相关的功能 -->
+	<script type="text/javascript" src="./build/react-dom.min.js" charset="utf-8"></script>
+	<!-- 将JSX语法转换成JavaScript语法 -->
+	<script type="text/javascript" src="./build/browser.min.js" charset="utf-8"></script>
+	<style type="text/css">
+		.divcenter{
+			text-align: center;
+		}
+		.divcenter a{
+			text-decoration: none;
+		}
+		.divcenter a:hover{
+			color: #ccc;
+		}
+	</style>
+</head>
+<body>
+	<!-- react渲染的模板内容会插入到这个dom节点中,作为一个容器 -->
+	<div id="react-container">
+		
+	</div>
+</body>
+<!-- 在React开始中,使用JSX,跟javascript不兼容,在使用jsx的地方,要设置type="text/babel" -->
+<!-- babel是一个转换编译器,ES6转换成可以在浏览器中运行的代码 -->
+<script type="text/babel">
+	var container = document.getElementById("react-container");
+	/*
+	 * props,state
+	 * props 是组件自身的属性对象,一般用于嵌套的内外层组件中,负责传递信息(通常由父层组件向子层组件传递)
+	 * 注意: props对象中的属性与组件的属性是一一对应,不要直接去修改props中属性的值
+	 */
+
+	/*
+	 * 复合组件 
+	 * 也被称为组合组件,创建多个组件和成一个组件
+	 * 需求 定义一个组件WebShow,输出网站的名称和网址,网址是一个可以点击的链接
+	 * 
+	 */
+	/*
+	var WebName = React.createClass({
+		render:function(){
+			return (
+				<h1>{this.props.name}</h1>
+			);
+		}
+	});
+	var WebLink = React.createClass({
+		render:function(){
+			return (
+				<a href={this.props.url}>{this.props.url}</a>
+			);
+		}
+	});
+
+	// 定义复合组件
+	var WebShow = React.createClass({
+		render:function(){
+			return (
+				<div className="divcenter">
+					<WebName name={this.props.name}/>
+					<WebLink url={this.props.url}/>
+				</div>
+			);
+		}
+	});
+	ReactDOM.render(<WebShow name="PL2" url="http://www.baidu.com"/>,container);
+	*/
+
+	/*
+	 * ...this.props props提供的语法糖,可以将父组件中的全部属性都复制给子组件
+	 * 需求:定义一个组件Link,Link组件中只包含一个<a>,我们不给<a>设置任何属性,所有属性全部从父组件复制得到
+	 */
+	/*
+	var Link = React.createClass({
+		render:function(){
+			return (
+				<a {...this.props}>{this.props.name}</a>
+			);
+		}
+	});
+	ReactDOM.render(<Link name="http://www.baidu.com" href="http://www.baidu.com"/>,container);
+	*/
+	
+	/*
+	 * this.props.children
+	 * children是一个例外,不是跟组件的属性对应的。表示组件的所有子节点
+	 * 定义一个列表组件,列表项项中显示的内容,以及列表项的数量都由外部决定
+	 */
+	/*
+	var ListComponent = React.createClass({
+		render:function(){
+			return (
+				<ul>
+					{
+						// 列表项的数量以及内容不确定,在创建模板时才能确定
+						// 利用this.props.children从负组件获取需要展示的列表项内容
+						React.Children.map(this.props.children,function(child){
+							return <li>{child}</li>
+						})
+					}
+				</ul>
+			);
+		}
+	});
+
+	ReactDOM.render(
+	(<ListComponent>
+		<h1>pl</h1>
+		<a href="http://www.baidu.com">百度</a>
+	</ListComponent>)
+	,container);
+	*/
+
+	/*
+	 * 属性验证 propTypes
+	 * 组件类的属性,用于验证组件实例的属性是否符合要求
+	 */
+	/*
+	var ShowTitle = React.createClass({
+		propTypes:{
+			// title数据类型必须为字符串
+			title:React.PropTypes.string.isRequired
+		},
+		render:function(){
+			return (
+				<h1>{this.props.title}</h1>
+			);
+		}
+	});
+	ReactDOM.render(
+	<ShowTitle title='20' />
+	,container);
+	*/
+
+	/*
+	 * 设置组件的默认值
+	 * 通过实现组件的getDefaultProps方法,设置组件的默认值
+	 */
+	 var ShowTitle = React.createClass({
+		propTypes:{
+			// title数据类型必须为字符串
+			title:React.PropTypes.string.isRequired
+		},
+		getDefaultProps:function(){
+			return{
+				title:'标题1'
+			};
+		},
+		render:function(){
+			return (
+				<h1>{this.props.title}</h1>
+			);
+		}
+	});
+	ReactDOM.render(
+	<ShowTitle />
+	,container);
+</script>
+</html>

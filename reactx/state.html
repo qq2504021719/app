@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<!-- 核心库 -->
+	<script type="text/javascript" src="./build/react.min.js" charset="utf-8"></script>
+	<!-- 提供与dom相关的功能 -->
+	<script type="text/javascript" src="./build/react-dom.min.js" charset="utf-8"></script>
+	<!-- 将JSX语法转换成JavaScript语法 -->
+	<script type="text/javascript" src="./build/browser.min.js" charset="utf-8"></script>
+</head>
+<body>
+	<!-- react渲染的模板内容会插入到这个dom节点中,作为一个容器 -->
+	<div id="react-container">
+		
+	</div>
+</body>
+<!-- 在React开始中,使用JSX,跟javascript不兼容,在使用jsx的地方,要设置type="text/babel" -->
+<!-- babel是一个转换编译器,ES6转换成可以在浏览器中运行的代码 -->
+<script type="text/babel">
+	var container = document.getElementById("react-container");
+	/*
+	 * 事件处理
+	 * 案例 定义一个组件,组件包含一个button,给button绑定一个onclick时间
+	 */
+	 /*
+	 var MyButton = React.createClass({
+	 	handleClick:function(){
+			alert('点击触发');
+	 	},
+		render:function(){
+			return (
+				<button onClick={this.handleClick}>{this.props.buttonTitle}</button>
+			);
+		}
+	 });
+	 ReactDOM.render(<MyButton buttonTitle="PL2"/>,container);
+	 */
+
+	 /*
+	  * state 状态
+	  * props
+	  * 组件自身的属性
+	  * this.state
+	  * 
+	  */
+	var Input = React.createClass({
+	  	// 定义初始状态
+	  	getInitialState:function(){
+	  		return{
+	  			value:"请输入"
+	  		}
+	  	},
+	  	handleChange:function(event){
+	  		this.setState({value:event.target.value});
+	  	},
+		render:function(){
+			var values = this.state.value;
+			return (
+				<div>
+				<input type="text" value={values} onChange={this.handleChange} />
+				<h3>{values}</h3>
+				</div>
+			);
+		}
+	 });
+	  var CheckButton = React.createClass({
+	  	// 定义初始状态
+	  	getInitialState:function(){
+	  		return{
+	  			isCheck:false
+	  		}
+	  	},
+	  	// 定义事件绑定的方法
+	  	handleChange:function(){
+			//修改状态值,通过this.state读取设置的状态值
+			this.setState({isCheck:!this.state.isCheck});
+	  	},
+		render:function(){
+			// 根据状态值,设置显示的文字
+			// 在JSX语法中,不能直接使用if,使用三目运算符
+			var text = this.state.isCheck ? "已选中" : "未选中";
+			return (
+				<div>
+				<input type="checkbox" onChange={this.handleChange} />{text}
+				<Input></Input>
+				</div>
+			);
+		}
+	 });
+	 ReactDOM.render(<CheckButton />,container);
+
+</script>
+</html>

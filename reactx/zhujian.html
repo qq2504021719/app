@@ -9,6 +9,11 @@
 	<script type="text/javascript" src="./build/react-dom.min.js" charset="utf-8"></script>
 	<!-- 将JSX语法转换成JavaScript语法 -->
 	<script type="text/javascript" src="./build/browser.min.js" charset="utf-8"></script>
+	<style type="text/css">
+		.pstyle{
+			font-size: 20px;
+		}
+	</style>
 </head>
 <body>
 	<!-- react渲染的模板内容会插入到这个dom节点中,作为一个容器 -->
@@ -45,20 +50,56 @@
 	      React中属于JavaScript对象,key的名字不能出现"-",需要使用驼峰命名法。如果value为字符串,需要加引号。
 	   3、HTML5中,value如果是数字,需要带单位,
 	      React中不需要带单位
-	 */
+	 
 	 var text = 'React Hellow';
 	 var ptext = '第二行p标签';
 	  var HelloMessage = React.createClass({
 		render:function(){
 			return (
 				<div style={{width:"100%",textAlign:"center",fontFamily:"微软雅黑"}}>
-					<h1>{text}</h1>
-					<p>{ptext}</p>
+					<h1>{this.props.text}</h1>
+					<p className="pstyle">{this.props.ptext}</p>
 				</div>
 			);
 		}
 	});
-	ReactDOM.render(<HelloMessage/>,container);
+	ReactDOM.render(<HelloMessage text={text} ptext={ptext}/>,container);
+	*/
 
+
+	/*
+	 * 复合组件 
+	 * 也被称为组合组件,创建多个组件和成一个组件
+	 * 需求 定义一个组件WebShow,输出网站的名称和网址,网址是一个可以点击的链接
+	 * 
+	 */
+	var WebNane = React.createClass({
+		render:function(){
+			return (
+				<h1>{this.props.name}</h1>
+			);
+		}
+	});
+	var WebLink = React.createClass({
+		render:function(){
+			return (
+				<a href={this.props.url}>{this.props.url}</a>
+			);
+		}
+	});
+
+	// 定义复合组件
+	var WebShow = React.createClass({
+		render:function(){
+			return (
+				<div>
+					<WebNane name={this.props.name}/>
+					<WebLink url={this.props.url}/>
+				</div>
+			);
+		}
+	});
+
+	ReactDOM.render(<WebShow name="PL" url="http://www.baidu.com"/>,container);
 </script>
 </html>
