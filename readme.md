@@ -8,8 +8,3 @@
 # this.props.children children是一个例外,不是跟组件的属性对应的。表示组件的所有子节点
 # state  当state发生变化时,会调用组件内部的render方法
 # lifecycle 组件的生命周期
-
-#### ReactNative 学习
-### ReactNative 项目创建
-# 项目创建 react-native init 项目名
-
