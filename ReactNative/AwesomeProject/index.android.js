@@ -15,12 +15,12 @@ import {
 } from 'react-native';
 
 // 定义组件
-var AwesomeProject = React.createrclass({
+var AwesomeProject = React.createClass({
   render: function() {
     return (
       <View style={styles.container}>
         <View style={[styles.top,styles.border]}>
-        
+          <Text></Text>
         </View>
         <View style={[styles.bottom,styles.border,{borderWidth:5}]}>
         

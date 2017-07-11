@@ -14,14 +14,14 @@ import {
   View
 } from 'react-native';
 
-var LessonFlex = react.createClass({
+var LessonFlex = React.createClass({
   render: function() {
     return (
       <View style={styles.container}>
         <View style={styles.child1}>
           
-        </View style={styles.child2}>
-        <View>
+        </View>
+        <View style={styles.child2}>
           
         </View>
       </View>
@@ -57,13 +57,12 @@ var LessonFlex = react.createClass({
 // });
 
 
-/*
-  flex 
-  可以给组件指定flex,并且flex的值是数字。flex:1,表示组件可以撑满父组件所有的剩余空间
-  同时存在多个并列的子组件, flex:1,表示均分
-  如果这些并列的子组件的flex的值不一样,则谁的值更大,谁占据剩余空间的比例就更大(即占据剩余空间的比等于并列组件间flex值的比)
-  练习
- */
+
+// flex 
+// 可以给组件指定flex,并且flex的值是数字。flex:1,表示组件可以撑满父组件所有的剩余空间
+// 同时存在多个并列的子组件, flex:1,表示均分
+// 如果这些并列的子组件的flex的值不一样,则谁的值更大,谁占据剩余空间的比例就更大(即占据剩余空间的比等于并列组件间flex值的比)
+
 var styles = StyleSheet.create({
   container: {
     margin: 30,

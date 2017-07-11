@@ -12,4 +12,7 @@
 # ReactNative
 ## AwesomeProject StyleSheet介绍
 ## LessonFlex Flexbox布局
-
+## LessonView View组件使用
+## LessonText text使用,页面拆分成组件,点击事件,绑定事件传参,绑定参数
+## LessonTouchable 三种按钮效果,绑定事件
+ 

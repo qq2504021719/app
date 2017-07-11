@@ -22,7 +22,7 @@ import {
  */
 
 var LessonView = React.createClass({
-  reder: function() {
+  render: function() {
     return (
       <View style={[styles.container,styles.flex]}>
         <View style={styles.item}>
@@ -33,15 +33,15 @@ var LessonView = React.createClass({
             <View style={[styles.flex,styles.center,styles.lineCenter]}>
               <Text>海外酒店</Text>
             </View>
-            <View>
+            <View style={[styles.flex,styles.center]}>
               <Text>特价酒店</Text>
             </View>
           </View>
-          <View>
-            <View>
+          <View style={styles.flex}>
+            <View style={[styles.flex,styles.center,styles.lineCenter]}>
               <Text>团购</Text>
             </View>
-            <View>
+            <View style={[styles.flex,styles.center]}>
               <Text>民宿.客栈</Text>
             </View>
           </View>
@@ -53,7 +53,6 @@ var LessonView = React.createClass({
 
 var styles = StyleSheet.create({
   container: {
-    marginTop: 25,
     backgroundColor: "#F2F2F2",
   },
   flex: {
