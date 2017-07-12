@@ -13,29 +13,46 @@ import {
   Text,
   View,
   TouchableOpacity,
-  TouchableHighlight,
+  TextInput,
 } from 'react-native';
 
 /*
-  React Native 提供3个组件用于给其他没有触摸事件的组件绑定触摸事件
-  TouchableOpacity 透明触摸,点击时,组件会出现透明过渡效果
-  TouchableHighlight 高亮触摸,点击时,组件会出现高亮效果
-  TouchableWithoutFeedback 无反馈性触摸,点击时,组件无视觉变化
-  需要导入组件
+  TextInput是一个允许用户在应用中通过键盘输入文本的基本组件。
+  本组件的属性提供了多重特性的配置,譬如自动完成、自动大小写、
+  占位文字,日记多种不同的键盘类型(如纯数字键盘)等等
+  常用:
+  placeholder 占位符
+  value 输入框的值
+  password 是否密文输入
+  editable 输入框是否可编辑
+  returnKeyType 键盘return键类型
+  onChange 当文本发送变化时调用
+  onEndEditing 当结束编辑时调用
+  onSubmitEditing 当结束编辑,点击提交按钮时调用
  */
 
-var LessonTouchable = React.createClass({
+var Input = React.createClass({
+  getInitlalState: function() {
+    return {
+      inputText: "内容为空"
+    };
+  },
+  // 输入框的onChange实现
+  getContent: function(text) {
+    this.setState({
+      inputText: text
+    });
+  },
   clickBtn: function() {
-    alert('您点击了搜索');
+    alert(this.state.inputText);
   },
   render: function() {
     return (
       <View style={styles.container}>
         <View style={styles.flex}>
-          <View style={styles.input}></View>
+          <TextInput style={styles.input} onChangeText={this.getContent} returnKeyType="查看" placeholder="请输入内容" />
         </View>
         <TouchableOpacity style={styles.btn} onPress={this.clickBtn}><Text style={styles.search}>搜索</Text></TouchableOpacity>
-        <TouchableHighlight style={styles.btn1}><Text>搜索1</Text></TouchableHighlight>
       </View>
     );
   }
@@ -67,15 +84,6 @@ var styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  btn1: {
-    width: 55,
-    marginLeft: 5,
-    marginRight: 5,
-    backgroundColor: "#23BEFF",
-    height: 45,
-    justifyContent: "center",
-    alignItems: "center",
-  },
   search: {
     color: "#FFF",
     fontSize: 15,
@@ -83,4 +91,5 @@ var styles = StyleSheet.create({
   }
 });
 
-AppRegistry.registerComponent('LessonTouchable', () => LessonTouchable);
+// 导出模块
+module.exports = Input;
