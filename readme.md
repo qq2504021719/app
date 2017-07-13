@@ -17,6 +17,6 @@
 ## LessonTouchable 三种按钮效果,绑定事件
 
 ## reactnative
-### reactnative-input input框使用
-### reactnative-image image使用
+### reactnative-zujian-input input框使用
+### reactnative-zujian-image image使用
  

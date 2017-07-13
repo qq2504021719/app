@@ -18,12 +18,15 @@ import {
 var Input = require('./zujian/input/input');
 // image
 var Images = require('./zujian/image/image');
+// ScrollView
+var ScrollViews = require('./zujian/scrollview/scrollview');
+
 
 export default class reactnative extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Images></Images>
+        <ScrollViews></ScrollViews>
       </View>
     );
   }
