@@ -19,4 +19,7 @@
 ## reactnative
 ### reactnative-zujian-input input框使用
 ### reactnative-zujian-image image使用
+### reactnative-zujian-scrollview scrollview使用,电影列表
+### reactnative-zujian-listview listview使用
+
  

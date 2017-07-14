@@ -26,33 +26,23 @@
         "abridged_cast": [{
             "name": "Keanu Reeves",
             "id": "162654049",
-            "characters": [
-                "Eddie Kasalivich"
-            ]
+            "characters": ["Eddie Kasalivich"]
         }, {
             "name": "Morgan Freeman",
             "id": "162652224",
-            "characters": [
-                "Paul Shannon"
-            ]
+            "characters": ["Paul Shannon"]
         }, {
             "name": "Rachel Weisz",
             "id": "162653682",
-            "characters": [
-                "Dr. Lily Sinclair"
-            ]
+            "characters": ["Dr. Lily Sinclair"]
         }, {
             "name": "Fred Ward",
             "id": "162667867",
-            "characters": [
-                "Agt. Leon Ford"
-            ]
+            "characters": ["Agt. Leon Ford"]
         }, {
             "name": "Kevin Dunn",
             "id": "162664658",
-            "characters": [
-                "Agt. Doyle"
-            ]
+            "characters": ["Agt. Doyle"]
         }],
         "alternate_ids": {
             "imdb": "0115857"
@@ -324,33 +314,23 @@
         "abridged_cast": [{
             "name": "Ross Thompson",
             "id": "770816985",
-            "characters": [
-                "Heinrich"
-            ]
+            "characters": ["Heinrich"]
         }, {
             "name": "Steve Bisley",
             "id": "391393048",
-            "characters": [
-                "Larry"
-            ]
+            "characters": ["Larry"]
         }, {
             "name": "David Bracks",
             "id": "770932042",
-            "characters": [
-                "Spray painter"
-            ]
+            "characters": ["Spray painter"]
         }, {
             "name": "Tim Burns",
             "id": "391393049",
-            "characters": [
-                "Survey driver"
-            ]
+            "characters": ["Survey driver"]
         }, {
             "name": "Ralph Cotterill",
             "id": "770686983",
-            "characters": [
-                "Gray"
-            ]
+            "characters": ["Gray"]
         }],
         "alternate_ids": {
             "imdb": "0080513"
@@ -508,33 +488,23 @@
         "abridged_cast": [{
             "name": "Rick Ross",
             "id": "770761752",
-            "characters": [
-                "Pac Man"
-            ]
+            "characters": ["Pac Man"]
         }, {
             "name": "Mr. Bones",
             "id": "771060841",
-            "characters": [
-                "Chase"
-            ]
+            "characters": ["Chase"]
         }, {
             "name": "Total Kaos",
             "id": "771060844",
-            "characters": [
-                "Paul"
-            ]
+            "characters": ["Paul"]
         }, {
             "name": "M Beezy",
             "id": "771060843",
-            "characters": [
-                "Reno"
-            ]
+            "characters": ["Reno"]
         }, {
             "name": "Sho nuff",
             "id": "771060842",
-            "characters": [
-                "Tee"
-            ]
+            "characters": ["Tee"]
         }],
         "links": {
             "self": "http://api.rottentomatoes.com/api/public/v1.0/movies/771006274.json",
@@ -564,21 +534,15 @@
         "abridged_cast": [{
             "name": "David Heavener",
             "id": "162767691",
-            "characters": [
-                "Cody"
-            ]
+            "characters": ["Cody"]
         }, {
             "name": "Stuart Whitman",
             "id": "162656122",
-            "characters": [
-                "Duke"
-            ]
+            "characters": ["Duke"]
         }, {
             "name": "Darwyn Swalve",
             "id": "770883640",
-            "characters": [
-                "Hog"
-            ]
+            "characters": ["Hog"]
         }, {
             "name": "Allyson Davis",
             "id": "770880183"

@@ -5,38 +5,17 @@
  */
 
 import React, {
-  Component
+	Component
 } from 'react';
 import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
+	AppRegistry,
+	StyleSheet,
+	Text,
+	View
 } from 'react-native';
 
-// input
-var Input = require('./zujian/input/input');
-// image
-var Images = require('./zujian/image/image');
-// ScrollView
-var ScrollViews = require('./zujian/scrollview/scrollview');
 
-
-export default class reactnative extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <ScrollViews></ScrollViews>
-      </View>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F5FCFF',
-  },
-});
+// 电影列表
+var reactnative = require('./zujian/listview/listview');
 
 AppRegistry.registerComponent('reactnative', () => reactnative);
