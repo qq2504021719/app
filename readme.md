@@ -9,14 +9,14 @@
 ### state  当state发生变化时,会调用组件内部的render方法
 ### lifecycle 组件的生命周期
 
-# ReactNative
-## AwesomeProject StyleSheet介绍
-## LessonFlex Flexbox布局
-## LessonView View组件使用
-## LessonText text使用,页面拆分成组件,点击事件,绑定事件传参,绑定参数
-## LessonTouchable 三种按钮效果,绑定事件
 
-## reactnative
+
+## react-native
+### reactnative-zujian-flex Flexbox布局
+### reactnative-zujian-view View组件使用
+### reactnative-zujian-text text使用,页面拆分成组件,点击事件,绑定事件传参,绑定参数
+### reactnative-zujian-touchable 三种按钮效果,绑定事件
+### reactnative-zujian-view view框使用
 ### reactnative-zujian-input input框使用
 ### reactnative-zujian-image image使用
 ### reactnative-zujian-scrollview scrollview使用,电影列表

@@ -3,6 +3,9 @@
  * https://github.com/facebook/react-native
  * @flow
  */
+ /*
+老版本使用 安装 npm i -S react-native-deprecated-custom-components 官方文档 http://reactnative.cn/docs/0.46/navigation.html#content
+ */
 import { Navigator } from 'react-native-deprecated-custom-components';
 import React, {
 	Component
