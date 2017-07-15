@@ -20,6 +20,6 @@
 ### reactnative-zujian-input input框使用
 ### reactnative-zujian-image image使用
 ### reactnative-zujian-scrollview scrollview使用,电影列表
-### reactnative-zujian-listview listview使用
-
- 
+### reactnative-zujian-listview listview使用,电影列表
+### reactnative-zujian-navigator navigator组件使用,(navigator页面切换)。(navigators)页面切换带参
+#### 老版本使用 安装 npm i -S react-native-deprecated-custom-components 官方文档 http://reactnative.cn/docs/0.46/navigation.html#content

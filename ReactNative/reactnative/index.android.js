@@ -16,6 +16,6 @@ import {
 
 
 // 电影列表
-var reactnative = require('./zujian/listview/listview');
+var reactnative = require('./zujian/navigator/navigators');
 
 AppRegistry.registerComponent('reactnative', () => reactnative);
