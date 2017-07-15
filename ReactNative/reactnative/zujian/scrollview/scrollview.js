@@ -20,7 +20,7 @@ import {
  * 实现检测拖拽、滑动的相关方法
  * 添加几个子组件
  */
-
+var Dhheader = require('../daohang/dhheader');
 var ScrollViews = React.createClass({
 	_onScrollBeginDrag: function() {
 		console.log('开始拖拽');
@@ -39,30 +39,37 @@ var ScrollViews = React.createClass({
 	},
 	render: function() {
 		return (
-			<View style={styles.container}>
-				<ScrollView style={styles.scrollview} 
-				showsVerticalScrollIndicator={true} 
-				onScrollBeginDrag={this._onScrollBeginDrag} 
-				onScrollEndDrag={this._onScrollEndDrag} 
-				onMomentumScrollBegin = {this._onMomentumScrollBegin} 
-				onMomentumScrollEnd = {this._onMomentumScrollEnd} 
-				refreshControl={
-					<RefreshControl refreshing={false}
-					tintColor="red" 
-					title="正在刷新PL" 
-					onRefresh={this._onRefresh}
-					/>
-				}>
-					<View style={styles.view_1}></View>
-					<View style={styles.view_2}></View>
-					<View style={styles.view_3}></View>
-				</ScrollView>
+			<View style={styles.tflex}>
+        	<Dhheader navigators={this.props.navigator}></Dhheader>
+				<View style={styles.container}>
+					<ScrollView style={styles.scrollview} 
+					showsVerticalScrollIndicator={true} 
+					onScrollBeginDrag={this._onScrollBeginDrag} 
+					onScrollEndDrag={this._onScrollEndDrag} 
+					onMomentumScrollBegin = {this._onMomentumScrollBegin} 
+					onMomentumScrollEnd = {this._onMomentumScrollEnd} 
+					refreshControl={
+						<RefreshControl refreshing={false}
+						tintColor="red" 
+						title="正在刷新PL" 
+						onRefresh={this._onRefresh}
+						/>
+					}>
+						<View style={styles.view_1}></View>
+						<View style={styles.view_2}></View>
+						<View style={styles.view_3}></View>
+					</ScrollView>
+				</View>
 			</View>
 		);
 	}
 });
 
 var styles = StyleSheet.create({
+	tflex: {
+	    flex: 1,
+	    backgroundColor: "#F5FCFF",
+	  },
 	container: {
 		flex: 1,
 		backgroundColor: "cyan",

@@ -24,23 +24,32 @@ import {
   需要导入组件
  */
 
+ var Dhheader = require('../daohang/dhheader');
+
 var LessonTouchable = React.createClass({
   clickBtn: function() {
     alert('您点击了搜索');
   },
   render: function() {
     return (
-      <View style={styles.container}>
-        <View style={styles.flex}>
-          <View style={styles.input}></View>
+      <View style={styles.tflex}>
+        <Dhheader navigators={this.props.navigator}></Dhheader>
+        <View style={styles.container}>
+          <View style={styles.flex}>
+            <View style={styles.input}></View>
+          </View>
+          <TouchableOpacity style={styles.btn} onPress={this.clickBtn}><Text style={styles.search}>搜索</Text></TouchableOpacity>
         </View>
-        <TouchableOpacity style={styles.btn} onPress={this.clickBtn}><Text style={styles.search}>搜索</Text></TouchableOpacity>
       </View>
     );
   }
 });
 
 var styles = StyleSheet.create({
+  tflex: {
+    flex: 1,
+    backgroundColor: "#F5FCFF",
+  },
   container: {
     flexDirection: "row",
     height: 45,

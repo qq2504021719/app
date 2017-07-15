@@ -20,6 +20,7 @@ import {
  * https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json
  * 
  */
+var Dhheader = require('../daohang/dhheader');
 // 重文件中读取数据.执行了JSON.parse(),将json格式的字符串转换为json格式的对象
 var movieData = require('./data.json');
 
@@ -45,17 +46,22 @@ var DScrollViews = React.createClass({
 			moviesRows.push(row);
 		}
 		return (
-			<View style={styles.container}>
-				<ScrollView style={styles.scrollView}>
-		{
-			moviesRows
-		}
-				</ScrollView>
+			<View style={styles.tflex}>
+	        	<Dhheader navigators={this.props.navigator}></Dhheader>
+				<View style={styles.container}>
+					<ScrollView style={styles.scrollView}>
+						{moviesRows}
+					</ScrollView>
+				</View>
 			</View>
 		);
 	}
 });
 var styles = StyleSheet.create({
+	tflex: {
+	    flex: 1,
+	    backgroundColor: "#F5FCFF",
+	},
 	container: {
 		flex: 1,
 	},

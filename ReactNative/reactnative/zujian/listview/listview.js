@@ -42,7 +42,7 @@ var contents = [
 	'C',
 ];
 
-
+var Dhheader = require('../daohang/dhheader');
 var ListViews = React.createClass({
 	getInitialState: function() {
 		var ds = new ListView.DataSource({
@@ -67,12 +67,19 @@ var ListViews = React.createClass({
 	},
 	render: function() {
 		return (
-			<ListView style={styles.container} dataSource={this.state.dataSource} renderRow={this._renderRow} />
+			<View style={styles.tflex}>
+	        	<Dhheader navigators={this.props.navigator}></Dhheader>
+				<ListView style={styles.container} dataSource={this.state.dataSource} renderRow={this._renderRow} />
+			</View>
 		);
 	}
 });
 
 var styles = StyleSheet.create({
+	tflex: {
+	    flex: 1,
+	    backgroundColor: "#F5FCFF",
+	},
 	container: {
 		flex: 1,
 		marginTop: 25,

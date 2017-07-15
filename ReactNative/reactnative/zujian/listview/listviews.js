@@ -19,7 +19,7 @@ import {
 
 // 冲文件中读取数据.执行了JSON.parse(),将json格式的字符串转换为json格式的对象
 var movieData = require('./data.json');
-
+var Dhheader = require('../daohang/dhheader');
 // 获取所有movies数据
 var movies = movieData.movies;
 
@@ -61,19 +61,26 @@ var ListViewss = React.createClass({
 	},
 	render: function() {
 		return (
-			<ListView  
-			style={styles.listViews}
-			dataSource={this.state.dataSource} 
-			renderRow={this._renderRow} 
-			renderHeader={this._renderHeader} 
-			renderSeparator={this._renderSeparator} 
-			initialListSize={5}
-			/>
+			<View style={styles.tflex}>
+	        	<Dhheader navigators={this.props.navigator}></Dhheader>
+				<ListView  
+				style={styles.listViews}
+				dataSource={this.state.dataSource} 
+				renderRow={this._renderRow} 
+				renderHeader={this._renderHeader} 
+				renderSeparator={this._renderSeparator} 
+				initialListSize={5}
+				/>
+			</View>
 		);
 	}
 });
 
 var styles = StyleSheet.create({
+	tflex: {
+	    flex: 1,
+	    backgroundColor: "#F5FCFF",
+	},
 	listViews: {
 		flex: 1,
 		marginTop: 25,

@@ -11,13 +11,18 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  TouchableOpacity
 } from 'react-native';
 
+var Dhheader = require('../daohang/dhheader');
 var LessonFlex = React.createClass({
+
   render: function() {
     return (
       <View style={styles.container}>
+        <Dhheader navigators={this.props.navigator}></Dhheader>
+
         <View style={styles.child1}>
           
         </View>
@@ -65,9 +70,8 @@ var LessonFlex = React.createClass({
 
 var styles = StyleSheet.create({
   container: {
-    margin: 30,
     flex: 1,
-    backgroundColor: "#3399FF",
+    backgroundColor: "#F5FCFF",
   },
   child1: {
     flex: 1,
@@ -76,7 +80,25 @@ var styles = StyleSheet.create({
   child2: {
     flex: 2,
     backgroundColor: "#339999",
-  }
+  },
+  containers: {
+    backgroundColor:"#666699",
+  },
+  flex:{
+    flex:1,
+  },
+  title:{
+    marginTop:20,
+    height:50,
+    fontSize:30,
+    fontWeight:"bold",
+    marginLeft:10,
+    color:"#FFF",
+  },
+  title_view:{
+    borderBottomWidth:1,
+    borderColor:"#FFF",
+  },
 });
 
 

@@ -37,7 +37,7 @@ import {
  * 3、渲染场景(高数导航器如何渲染页面),利用第一步设置的路由对象进行渲染场景
  */
 
-
+var Dhheader = require('../daohang/dhheader');
 // 页面A
 var FirstPage = React.createClass({
 	// 按钮onPress事件处理方法
@@ -49,10 +49,13 @@ var FirstPage = React.createClass({
 	},
 	render: function() {
 		return (
-			<View style={[styles.flex,{backgroundColor:"#6666FF"}]}>
-				<TouchableOpacity style={styles.btn} onPress={this.pressPush}>
-					<Text>点击进入页面B</Text>
-				</TouchableOpacity>
+			<View style={styles.tflex}>
+	        	<Dhheader navigators={this.props.navigator}></Dhheader>
+				<View style={[styles.flex,{backgroundColor:"#6666FF"}]}>
+					<TouchableOpacity style={styles.btn} onPress={this.pressPush}>
+						<Text>点击进入页面B</Text>
+					</TouchableOpacity>
+				</View>
 			</View>
 		);
 	}
@@ -121,6 +124,10 @@ var Navigators = React.createClass({
 });
 
 var styles = StyleSheet.create({
+	tflex: {
+	    flex: 1,
+	    backgroundColor: "#F5FCFF",
+	},
 	flex: {
 		flex: 1,
 		justifyContent: "center",

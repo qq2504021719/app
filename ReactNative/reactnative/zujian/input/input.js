@@ -31,6 +31,8 @@ import {
   onSubmitEditing 当结束编辑,点击提交按钮时调用
  */
 
+var Dhheader = require('../daohang/dhheader');
+
 var Input = React.createClass({
   getInitlalState: function() {
     return {
@@ -48,17 +50,24 @@ var Input = React.createClass({
   },
   render: function() {
     return (
-      <View style={styles.container}>
-        <View style={styles.flex}>
-          <TextInput style={styles.input} onChangeText={this.getContent}  returnKeyType="查看" placeholder="请输入内容" />
+      <View style={styles.tflex}>
+        <Dhheader navigators={this.props.navigator}></Dhheader>
+        <View style={styles.container}>
+          <View style={styles.flex}>
+            <TextInput style={styles.input} onChangeText={this.getContent}  returnKeyType="查看" placeholder="请输入内容" />
+          </View>
+          <TouchableOpacity style={styles.btn} onPress={this.clickBtn}><Text style={styles.search}>搜索</Text></TouchableOpacity>
         </View>
-        <TouchableOpacity style={styles.btn} onPress={this.clickBtn}><Text style={styles.search}>搜索</Text></TouchableOpacity>
       </View>
     );
   }
 });
 
 var styles = StyleSheet.create({
+  tflex: {
+    flex: 1,
+    backgroundColor: "#F5FCFF",
+  },
   container: {
     flexDirection: "row",
     height: 45,

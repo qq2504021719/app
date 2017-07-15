@@ -34,6 +34,8 @@ import {
 var Header = require('./header');
 var News = require('./news');
 
+var Dhheader = require('../daohang/dhheader');
+
 var LessonText = React.createClass({
   render: function() {
     // 新闻信息数组
@@ -46,6 +48,7 @@ var LessonText = React.createClass({
     ];
     return (
       <View style={styles.flex}>
+        <Dhheader navigators={this.props.navigator}></Dhheader>
         {/* Header */}
         <Header></Header>
         {/* News */}
@@ -58,6 +61,7 @@ var LessonText = React.createClass({
 var styles = StyleSheet.create({
   flex: {
     flex: 1,
+    backgroundColor: "#F5FCFF",
   },
 });
 

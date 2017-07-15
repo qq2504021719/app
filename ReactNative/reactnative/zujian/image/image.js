@@ -24,16 +24,19 @@ import {
  * http://pic.qiantucdn.com/58pic/17/06/86/47n58PICq5w_1024.jpg!/fw/
  780/watermark/url/L3dhdGVybWFyay12MS4zLnBuZw==/align/center
  */
-
+var Dhheader = require('../daohang/dhheader');
 var Images = React.createClass({
   render: function() {
     return (
-      <View style={styles.container}>
-        <View style={styles.net}>
-          <Image style={styles.netImage} source={{uri:"http://pic.qiantucdn.com/58pic/17/06/86/47n58PICq5w_1024.jpg!/fw/780/watermark/url/L3dhdGVybWFyay12MS4zLnBuZw==/align/center"}} />
-        </View>
-        <View style={styles.local}>
-          <Image style={styles.localImage} source={{uri:"http://desk.fd.zol-img.com.cn/t_s1024x768c5/g5/M00/02/03/ChMkJlbKx2qIKPxiAAlXILFmr4gAALHzQFig2UACVc4500.jpg"}} />
+      <View style={styles.tflex}>
+        <Dhheader navigators={this.props.navigator}></Dhheader>
+        <View style={styles.container}>
+          <View style={styles.net}>
+            <Image style={styles.netImage} source={{uri:"http://pic.qiantucdn.com/58pic/17/06/86/47n58PICq5w_1024.jpg!/fw/780/watermark/url/L3dhdGVybWFyay12MS4zLnBuZw==/align/center"}} />
+          </View>
+          <View style={styles.local}>
+            <Image style={styles.localImage} source={{uri:"http://desk.fd.zol-img.com.cn/t_s1024x768c5/g5/M00/02/03/ChMkJlbKx2qIKPxiAAlXILFmr4gAALHzQFig2UACVc4500.jpg"}} />
+          </View>
         </View>
       </View>
     );
@@ -41,6 +44,10 @@ var Images = React.createClass({
 });
 
 var styles = StyleSheet.create({
+  tflex: {
+    flex: 1,
+    backgroundColor: "#F5FCFF",
+  },
   container: {
     flex: 1,
     margin: 25,

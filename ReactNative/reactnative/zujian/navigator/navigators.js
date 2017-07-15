@@ -17,7 +17,7 @@ import {
 	TextInput,
 } from 'react-native';
 
-
+var Dhheader = require('../daohang/dhheader');
 // 页面A
 var InputPage = React.createClass({
 	getInitialState:function(){
@@ -46,11 +46,14 @@ var InputPage = React.createClass({
 	},
 	render: function() {
 		return (
-			<View style={inputStyle.container}>
-				<TextInput style={inputStyle.input} placeholder="请输入内容" onChangeText={this.getInputContent} />
-				<TouchableOpacity style={styles.btn} onPress={this.pressPush}>
-					<Text>带参跳转B页面</Text>
-				</TouchableOpacity>
+			<View style={styles.tflex}>
+	        	<Dhheader navigators={this.props.navigator}></Dhheader>
+				<View style={inputStyle.container}>
+					<TextInput style={inputStyle.input} placeholder="请输入内容" onChangeText={this.getInputContent} />
+					<TouchableOpacity style={styles.btn} onPress={this.pressPush}>
+						<Text>带参跳转B页面</Text>
+					</TouchableOpacity>
+				</View>
 			</View>
 		);
 	}
@@ -149,6 +152,10 @@ var Navigatorss = React.createClass({
 });
 
 var styles = StyleSheet.create({
+	tflex: {
+	    flex: 1,
+	    backgroundColor: "#F5FCFF",
+	},
 	flex: {
 		flex: 1,
 	},
