@@ -40,7 +40,7 @@ var ScrollViews = React.createClass({
 	render: function() {
 		return (
 			<View style={styles.tflex}>
-        	<Dhheader navigators={this.props.navigator}></Dhheader>
+        	<Dhheader navigatorss={this.props.navigator}></Dhheader>
 				<View style={styles.container}>
 					<ScrollView style={styles.scrollview} 
 					showsVerticalScrollIndicator={true} 

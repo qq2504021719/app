@@ -47,7 +47,7 @@ var DScrollViews = React.createClass({
 		}
 		return (
 			<View style={styles.tflex}>
-	        	<Dhheader navigators={this.props.navigator}></Dhheader>
+	        	<Dhheader navigatorss={this.props.navigator}></Dhheader>
 				<View style={styles.container}>
 					<ScrollView style={styles.scrollView}>
 						{moviesRows}

@@ -21,7 +21,7 @@ var LessonFlex = React.createClass({
   render: function() {
     return (
       <View style={styles.container}>
-        <Dhheader navigators={this.props.navigator}></Dhheader>
+        <Dhheader navigatorss={this.props.navigator}></Dhheader>
 
         <View style={styles.child1}>
           

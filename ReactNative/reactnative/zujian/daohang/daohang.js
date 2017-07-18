@@ -43,10 +43,10 @@ var Listviews = require('../listview/listview');
 var Listviewss = require('../listview/listviews');
 
 // navigator 
-var Navigators = require('../navigator/navigator');
+var navigatorssc = require('../navigator/navigator');
 
-// navigators
-var Navigatorss = require('../navigator/navigators');
+// navigatorss
+var navigatorsssc = require('../navigator/navigators');
 
 var daohang = React.createClass({
   // 按钮onPress事件处理方法
@@ -119,17 +119,17 @@ var daohang = React.createClass({
     };
     this.props.navigator.push(FlexRoute);
   },
-  // Navigators
-  NavigatorspressPush: function() {
+  // navigatorss
+  navigatorsspressPush: function() {
     var FlexRoute = {
-      component: Navigators
+      component: navigatorssc
     };
     this.props.navigator.push(FlexRoute);
   },
-  // Navigatorss
-  NavigatorsspressPush: function() {
+  // navigatorsss
+  navigatorssspressPush: function() {
     var FlexRoute = {
-      component: Navigatorss
+      component: navigatorsssc
     };
     this.props.navigator.push(FlexRoute);
   },
@@ -144,7 +144,7 @@ var daohang = React.createClass({
         [{"route":this.pressPush,"msg":'flex'},{"route":this.ViespressPush,"msg":'View'},{"route":this.TextspressPush,"msg":'Text'}],
         [{"route":this.touchablepressPush,"msg":'按钮'},{"route":this.InputspressPush,"msg":'Input'},{"route":this.ImagespressPush,"msg":'Image'}],
         [{"route":this.ScrollviewspressPush,"msg":'列表'},{"route":this.DscrollviewpressPush,"msg":'电影列表'},{"route":this.ListviewspressPush,"msg":'list列表'}],
-        [{"route":this.ListviewsspressPush,"msg":'list电影列表'},{"route":this.NavigatorspressPush,"msg":'页面导航'},{"route":this.NavigatorsspressPush,"msg":'带参页面导航'}]
+        [{"route":this.ListviewsspressPush,"msg":'list电影列表'},{"route":this.navigatorsspressPush,"msg":'页面导航'},{"route":this.navigatorssspressPush,"msg":'带参页面导航'}]
       ])
     };
   },

@@ -29,7 +29,7 @@ var Images = React.createClass({
   render: function() {
     return (
       <View style={styles.tflex}>
-        <Dhheader navigators={this.props.navigator}></Dhheader>
+        <Dhheader navigatorss={this.props.navigator}></Dhheader>
         <View style={styles.container}>
           <View style={styles.net}>
             <Image style={styles.netImage} source={{uri:"http://pic.qiantucdn.com/58pic/17/06/86/47n58PICq5w_1024.jpg!/fw/780/watermark/url/L3dhdGVybWFyay12MS4zLnBuZw==/align/center"}} />

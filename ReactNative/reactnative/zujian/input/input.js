@@ -51,7 +51,7 @@ var Input = React.createClass({
   render: function() {
     return (
       <View style={styles.tflex}>
-        <Dhheader navigators={this.props.navigator}></Dhheader>
+        <Dhheader navigatorss={this.props.navigator}></Dhheader>
         <View style={styles.container}>
           <View style={styles.flex}>
             <TextInput style={styles.input} onChangeText={this.getContent}  returnKeyType="查看" placeholder="请输入内容" />

@@ -50,7 +50,7 @@ var FirstPage = React.createClass({
 	render: function() {
 		return (
 			<View style={styles.tflex}>
-	        	<Dhheader navigators={this.props.navigator}></Dhheader>
+	        	<Dhheader navigatorss={this.props.navigator}></Dhheader>
 				<View style={[styles.flex,{backgroundColor:"#6666FF"}]}>
 					<TouchableOpacity style={styles.btn} onPress={this.pressPush}>
 						<Text>点击进入页面B</Text>
@@ -94,7 +94,7 @@ var SeconPage = React.createClass({
 参数 : route(第一步场景并设置给导航器的路由对象),navigator(导航器对象)
 实现: 给需要显示的组件设置属性
 */
-var Navigators = React.createClass({
+var navigatorss = React.createClass({
 	render: function() {
 		var rootRoute = {
 			component: FirstPage
@@ -145,4 +145,4 @@ var styles = StyleSheet.create({
 });
 
 // 导出模块
-module.exports = Navigators;
+module.exports = navigatorss;

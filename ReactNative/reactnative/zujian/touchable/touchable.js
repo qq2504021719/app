@@ -33,7 +33,7 @@ var LessonTouchable = React.createClass({
   render: function() {
     return (
       <View style={styles.tflex}>
-        <Dhheader navigators={this.props.navigator}></Dhheader>
+        <Dhheader navigatorss={this.props.navigator}></Dhheader>
         <View style={styles.container}>
           <View style={styles.flex}>
             <View style={styles.input}></View>

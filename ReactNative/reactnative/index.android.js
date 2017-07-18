@@ -16,6 +16,6 @@ import {
 
 
 // 电影列表
-var reactnative = require('./zujian/daohang/daohangn');
+var reactnative = require('./zujian/fetch/fetchmovielist');
 
 AppRegistry.registerComponent('reactnative', () => reactnative);

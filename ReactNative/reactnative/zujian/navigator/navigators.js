@@ -47,7 +47,7 @@ var InputPage = React.createClass({
 	render: function() {
 		return (
 			<View style={styles.tflex}>
-	        	<Dhheader navigators={this.props.navigator}></Dhheader>
+	        	<Dhheader navigatorss={this.props.navigator}></Dhheader>
 				<View style={inputStyle.container}>
 					<TextInput style={inputStyle.input} placeholder="请输入内容" onChangeText={this.getInputContent} />
 					<TouchableOpacity style={styles.btn} onPress={this.pressPush}>
@@ -115,7 +115,7 @@ var detailStyle = StyleSheet.create({
 	},
 });
 
-var Navigatorss = React.createClass({
+var navigatorsss = React.createClass({
 	render: function() {
 		var rootRoute = {
 			component: InputPage,
@@ -172,4 +172,4 @@ var styles = StyleSheet.create({
 });
 
 // 导出模块
-module.exports = Navigatorss;
+module.exports = navigatorsss;

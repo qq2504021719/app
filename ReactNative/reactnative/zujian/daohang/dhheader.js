@@ -20,7 +20,7 @@ var Dhheader = React.createClass({
     var ABRoute = {
       component: Daohangn
     };
-    this.props.navigators.push(ABRoute);
+    this.props.navigatorss.push(ABRoute);
   },
 	render: function() {
 		return (

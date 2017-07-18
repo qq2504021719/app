@@ -48,7 +48,7 @@ var LessonText = React.createClass({
     ];
     return (
       <View style={styles.flex}>
-        <Dhheader navigators={this.props.navigator}></Dhheader>
+        <Dhheader navigatorss={this.props.navigator}></Dhheader>
         {/* Header */}
         <Header></Header>
         {/* News */}

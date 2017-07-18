@@ -68,7 +68,7 @@ var ListViews = React.createClass({
 	render: function() {
 		return (
 			<View style={styles.tflex}>
-	        	<Dhheader navigators={this.props.navigator}></Dhheader>
+	        	<Dhheader navigatorss={this.props.navigator}></Dhheader>
 				<ListView style={styles.container} dataSource={this.state.dataSource} renderRow={this._renderRow} />
 			</View>
 		);

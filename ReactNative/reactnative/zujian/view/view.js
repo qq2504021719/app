@@ -27,7 +27,7 @@ var LessonView = React.createClass({
   render: function() {
     return (
       <View style={[styles.container,styles.flex]}>
-        <Dhheader navigators={this.props.navigator}></Dhheader>
+        <Dhheader navigatorss={this.props.navigator}></Dhheader>
         <View style={styles.item}>
           <View style={[styles.flex,styles.center]}>
             <Text>酒店</Text>
