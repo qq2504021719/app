@@ -20,7 +20,9 @@
 ### reactnative-zujian-image image使用
 ### reactnative-zujian-scrollview scrollview使用,电影列表
 ### reactnative-zujian-listview listview使用,电影列表
-### reactnative-zujian-navigator navigator组件使用,(navigator页面切换)。(navigators)页面切换带参
+### reactnative-zujian-navigator navigator组件使用,(navigator页面切换)。(navigators)页面切换带参 StackNavigator 导航组件使用
 #### 老版本使用 安装 npm i -S react-native-deprecated-custom-components 官方文档 http://reactnative.cn/docs/0.46/navigation.html#content
 ### reactnative-zujian-daohang 页面导航 react-native的全部页面 
 ### reactnative-zujian-fetch fetch.js get请求 post请求  fetchmovielist.js 将电影列表数据更改为网络请求,默认显示数据加载中,数据请求完成后显示电影列表页面
+##项目一(请求豆瓣开放api,显示图片列表,电影列表,对应详情页(电影详情页请求网页数据))  reactnative-zujian-doubanProject
+### 项目一导航搭建测试

@@ -4,6 +4,14 @@
  * @flow
  */
 
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ * @flow
+ */
+
+
+
 import React, {
 	Component
 } from 'react';
@@ -16,6 +24,6 @@ import {
 
 
 // 电影列表
-var reactnative = require('./zujian/fetch/fetchmovielist');
+var reactnative = require('./zujian/doubanProject/index');
 
 AppRegistry.registerComponent('reactnative', () => reactnative);
