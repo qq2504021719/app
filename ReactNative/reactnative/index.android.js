@@ -24,6 +24,6 @@ import {
 
 
 // 电影列表
-var reactnative = require('./zujian/doubanProject/index');
+var reactnative = require('./zujian/doubanProject/common/searchBar');
 
 AppRegistry.registerComponent('reactnative', () => reactnative);

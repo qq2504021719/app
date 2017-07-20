@@ -77,9 +77,9 @@ class toutiao extends Component {
         selected={this.state.selectedTab===tabName}  
         selectedTitleStyle={{color:'#f85959'}}  
         onPress={()=>this.onPress(tabName)}  
-        renderBadge={()=>isBadge?<View style={styles.badgeView}><Text style={styles.badgeText}>15</Text></View>:null}  
+        renderBadge={()=>isBadge?<View style={styles.badgeView}><Text style={styles.badgeText}>20</Text></View>:null}  
        >  
-       <View style={{flex:1,justifyContent:'center',alignItems:'center'}}><Text>{tabContent}</Text></View>  
+       <View style={styles.container1}><Text>{tabContent}</Text></View>  
        </TabNavigatorItem>  
      );  
    }  
@@ -105,7 +105,7 @@ class toutiao extends Component {
     var tabBarView=this.tabBarView();  
     return (  
       <View style={styles.container}>  
-        {tabBarView}  
+        {tabBarView}
       </View>  
     );  
   }  
@@ -115,7 +115,12 @@ const styles = StyleSheet.create({
   container: {  
     flex: 1,  
     backgroundColor: '#F5FCFF',  
-  },  
+  },
+  container1:{
+    flex:1,
+    justifyContent:'center',
+    alignItems:'center',
+  }, 
   welcome: {  
     fontSize: 20,  
     textAlign: 'center',  
