@@ -10,20 +10,20 @@
 ### lifecycle 组件的生命周期
 
 
-
 ## react-native学习
-reactnative-zujian-flex Flexbox布局
-reactnative-zujian-view View组件使用
-reactnative-zujian-text text使用,页面拆分成组件,点击事件,绑定事件传参,绑定参数,组件循环生成
-reactnative-zujian-touchable 三种按钮效果,绑定事件
-reactnative-zujian-input input框使用
-reactnative-zujian-image image使用
-reactnative-zujian-scrollview scrollview使用,电影列表
-reactnative-zujian-listview listview使用,电影列表
-reactnative-zujian-navigator navigator组件使用,(navigator页面切换)。(navigators)页面切换带参 StackNavigator 导航组件使用
+
+### reactnative-zujian-flex Flexbox布局
+### reactnative-zujian-view View组件使用
+### reactnative-zujian-text text使用,页面拆分成组件,点击事件,绑定事件传参,绑定参数,组件循环生成
+### reactnative-zujian-touchable 三种按钮效果,绑定事件
+### reactnative-zujian-input input框使用
+### reactnative-zujian-image image使用
+### reactnative-zujian-scrollview scrollview使用,电影列表
+### reactnative-zujian-listview listview使用,电影列表
+### reactnative-zujian-navigator navigator组件使用,(navigator页面切换)。(navigators)页面切换带参 StackNavigator 导航组件使用
 老版本使用 安装 npm i -S react-native-deprecated-custom-components 官方文档 http://reactnative.cn/docs/0.46/navigation.html#content
-reactnative-zujian-daohang 页面导航 react-native的全部页面 
-reactnative-zujian-fetch fetch.js get请求 post请求  fetchmovielist.js 将电影列表数据更改为网络请求,默认显示数据加载中,数据请求完成后显示电影列表页面
+### reactnative-zujian-daohang 页面导航 react-native的全部页面 
+### reactnative-zujian-fetch fetch.js get请求 post请求  fetchmovielist.js 将电影列表数据更改为网络请求,默认显示数据加载中,数据请求完成后显示电影列表页面
 
 ## reactnative-zujian-doubanProject 项目一(请求豆瓣开放api,显示图片列表,电影列表,对应详情页(电影详情页请求网页数据))  
 
