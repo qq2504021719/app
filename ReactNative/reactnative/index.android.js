@@ -23,7 +23,7 @@ import {
 } from 'react-native';
 
 
-// 电影列表
-var reactnative = require('./zujian/doubanProject/common/searchBar');
+ var reactnative = require('./zujian/doubanProject/common/header');
+// var reactnative = require('./zujian/text/text');
 
 AppRegistry.registerComponent('reactnative', () => reactnative);
