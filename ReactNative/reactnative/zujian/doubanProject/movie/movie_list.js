@@ -1,7 +1,7 @@
 /*
- * 图书列表模块:搜索栏,图书列表
- * 图书列表的内容:通过调用图书搜索接口获得多条图书数据
- * 图书列表Item是单独封装的
+ * 图书列表模块:搜索栏,电影列表
+ * 图书列表的内容:通过调用电影搜索接口获得多条图书数据
+ * 电影Item是单独封装的
  */
 
  
@@ -24,11 +24,12 @@ var SearchBar = require('./../common/searchBar');
 // url配置文件
 var ServiceUrl = require('./../common/service');
 // 列表组件
-var BookItem = require('./book_item');
-// 对应页面详情 
-var BookDetail = require('./book_detail');
+var MovieItem = require('./movie_item');
 
-var BookList = React.createClass({
+// 页面详情
+var MovieWeb = require('./../common/customWebView');
+
+var MovieList = React.createClass({
 	getInitialState:function(){
 		var ds = new ListView.DataSource({
 			rowHasChanged: (oldRow, nweRow) => oldRow !== nweRow
@@ -39,7 +40,7 @@ var BookList = React.createClass({
 			// 网络请求状态标识
 			show:false,
 			// 搜索关键字,作用: 1、搜索接口需要设置搜索内容。2.点击搜索按钮时,修改关键字内容,重新请求数据,重新渲染
-			keywords:"React"
+			keywords:"英雄本色"
 		};
 	},
 	getData:function(){
@@ -49,24 +50,27 @@ var BookList = React.createClass({
 		});
 		// 请求数据
 		var that = this;
-		var url = ServiceUrl.book_search+"?count=20&q="+this.state.keywords;
+		var url = ServiceUrl.movie_search+"?count=20&q="+this.state.keywords;
 		Util.getRequest(url,function(data){
 			// 请求成功回调函数,如果没有相关书籍,要alert提示
-			if(!data.books || data.books.length == 0){
-				return alert("未查询到相关书籍");
+			if(!data.subjects || data.subjects.length == 0){
+				return alert("未查询到相关电影");
 			}
 			// 设置下载状态和数据源
 			var ds = new ListView.DataSource({
 				rowHasChanged: (oldRow, nweRow) => oldRow !== nweRow
 			});
+
+			var movies = data.subjects;
+
 			that.setState({
 				show:true,
-				dataSource:ds.cloneWithRows(data.books)
+				dataSource:ds.cloneWithRows(movies)
 			});
 		},function(error){
 			// 请求失败回调函数
 			alert(error);
-		})
+		});
 	},
 	// TextInput的onChangeText事件处理方法,输入记录
 	_changeText:function(text){
@@ -79,11 +83,14 @@ var BookList = React.createClass({
 		this.getData();
 	},
 	// 显示详情页
-	_showDetail:function(bookID){
+	_showDetail:function(title,url){
 		var detailRoute = {
-			component:BookDetail,
+			component:MovieWeb,
 			passProps:{
-				bookID:bookID
+				backName:"电影",
+				barTitle:title,
+				url:url
+
 			}
 		};
 		this.props.navigator.push(detailRoute);
@@ -92,37 +99,29 @@ var BookList = React.createClass({
 		return (
 			<ScrollView>
 				<SearchBar 
-				placeholder="请输入图片的名称" 
+				placeholder="请输入电影的名称" 
 				onPress={this._searchPress} 
 				onChangeText={this._changeText}/>
 				{
 					this.state.show ? 
 					<ListView 
-					style={{flex:1,borderWidth:1,borderColor:"#CCCCCC",margin:5,}}
 					dataSource={this.state.dataSource} 
 					initialListSize={10} 
 					renderRow={this._renderRow} 
-					renderSeparator={this._renderSeparator}
-					onEndReached={this._onEndReached}
-					onEndReachedThreshold={0}
-					/> 
+					renderSeparator={this._renderSeparator} /> 
 					: Util.loading
 				}
 			</ScrollView>
 		);
 	},
-	_onEndReached:function(){
-		if(this.state.dataSource != 0){
-			alert('123123');
-		}
-	},
+	// 组件挂载完成
 	componentDidMount:function(){
 		// 请求数据
 		this.getData();
 	},
-	// 渲染行
-	_renderRow:function(book){
-		return <BookItem book={book} onPress={this._showDetail.bind(this,book.id)} />
+	// 渲染行 onPress={this._showDetail.bind(this,movie.alt)}
+	_renderRow:function(movie){
+		return <MovieItem movie={movie} onPress={this._showDetail.bind(this,movie.title,movie.alt)} />
 	},
 	// 渲染分割线
 	_renderSeparator:function(sectionID:number,rowID:number){
@@ -138,4 +137,4 @@ var styles = StyleSheet.create({
 
 });
 
-module.exports = BookList;
+module.exports = MovieList;

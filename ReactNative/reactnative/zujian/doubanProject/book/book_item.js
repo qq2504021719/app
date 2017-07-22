@@ -36,7 +36,7 @@ var BookItem = React.createClass({
 		return (
 			<TouchableOpacity style={styles.item} {...this.props}>
 				<View style={styles.imageContainer}>
-					<Image style={styles.image} source={uri:book.image} />
+					<Image style={styles.image} source={{uri:book.image}} />
 				</View>
 				<View style={styles.contentContainer}>
 					<View style={styles.textContainer}><Text numberOfLines={1}>{book.title}</Text></View>
@@ -44,7 +44,7 @@ var BookItem = React.createClass({
 					<View style={styles.textContainer}><Text style={styles.publisher_author} numberOfLines={1}>{book.author}</Text></View>
 					<View style={{flexDirection:"row",flex:1,alignItems:"center",}}>
 					<Text style={styles.price}>{book.price}</Text>
-					<Text style={styles.pages}>{book.pages}</Text>页
+					<Text style={styles.pages}>{book.pages}页</Text>
 					</View>
 				</View>
 			</TouchableOpacity>

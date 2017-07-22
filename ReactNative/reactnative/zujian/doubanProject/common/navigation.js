@@ -14,9 +14,8 @@ import {
   StyleSheet,  
   Text,  
   View,   
-  Navigator,
 } from 'react-native';
-
+import { Navigator } from 'react-native-deprecated-custom-components';
 
 var Navigation = React.createClass({
 	render:function(){

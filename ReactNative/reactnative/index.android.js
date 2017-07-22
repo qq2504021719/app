@@ -23,7 +23,7 @@ import {
 } from 'react-native';
 
 
- var reactnative = require('./zujian/doubanProject/common/header');
+ var reactnative = require('./zujian/doubanProject/index');
 // var reactnative = require('./zujian/text/text');
 
 AppRegistry.registerComponent('reactnative', () => reactnative);

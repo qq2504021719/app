@@ -27,10 +27,10 @@ var Header = React.createClass({
 			<View style={styles.header}>
 				<TouchableOpacity style={styles.left_btn} onPress={this._pop}>
 					<Icon />
-					<Text style={styles.btn_text}>{{HeaderContent.backName}}</Text>
+					<Text style={styles.btn_text}>{HeaderContent.backName}</Text>
 				</TouchableOpacity>
 				<View style={styles.title_container}>
-					<Text style={styles.title} numberOfLines={1}>{{HeaderContent.BarTitle}}</Text>
+					<Text style={styles.title} numberOfLines={1}>{HeaderContent.barTitle}</Text>
 				</View>
 			</View>
 		);

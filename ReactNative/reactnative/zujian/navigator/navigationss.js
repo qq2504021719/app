@@ -16,6 +16,7 @@ import {
   // StatusBar,
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
+
 var HomeScreen = require('./HomeScreen');
 var ChatScreen = require('./ChatScreen');
 

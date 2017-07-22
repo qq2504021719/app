@@ -11,16 +11,26 @@ import {
 import TabNavigator from 'react-native-tab-navigator';  
   
 const TabNavigatorItem =TabNavigator.Item;  
-  
+
+
+// 默认图标
 const TAB_NORMAL_1=require('./images/tabbar_1.png');  
 const TAB_NORMAL_2=require('./images/tabbar_2.png');  
 const TAB_NORMAL_3=require('./images/tabbar_3.png');  
 const TAB_NORMAL_4=require('./images/tabbar_4.png');  
   
+// 选择图标
 const TAB_PRESS_1=require('./images/tabbar_1_press.png');  
 const TAB_PRESS_2=require('./images/tabbar_2_press.png');  
 const TAB_PRESS_3=require('./images/tabbar_3_press.png');  
 const TAB_PRESS_4=require('./images/tabbar_4_press.png');  
+
+// 导入图书
+var BookList = require('./book/book_list');
+// 导入电影
+var MovieList = require('./movie/movie_list');
+// 导航器
+var Navigation = require('./common/navigation');
   
 class toutiao extends Component {  
   
@@ -79,7 +89,9 @@ class toutiao extends Component {
         onPress={()=>this.onPress(tabName)}  
         renderBadge={()=>isBadge?<View style={styles.badgeView}><Text style={styles.badgeText}>20</Text></View>:null}  
        >  
-       <View style={styles.container1}><Text>{tabContent}</Text></View>  
+       <View style={styles.container}>
+       <Navigation component={tabContent} />
+       </View>  
        </TabNavigatorItem>  
      );  
    }  
@@ -92,8 +104,8 @@ class toutiao extends Component {
       <TabNavigator  
        tabBarStyle={styles.tab}  
       >  
-      {this.renderTabView('头条','Home','头条板块',true)}  
-      {this.renderTabView('视频','Video','视频板块',false)}  
+      {this.renderTabView('图书','Home',BookList,true)}  
+      {this.renderTabView('电影','Video',MovieList,false)}  
       {this.renderTabView('关注','Follow','关注板块',false)}  
       {this.renderTabView('我的','Mine','我的板块',false)}  
       </TabNavigator>  
@@ -114,7 +126,7 @@ class toutiao extends Component {
 const styles = StyleSheet.create({  
   container: {  
     flex: 1,  
-    backgroundColor: '#F5FCFF',  
+    backgroundColor: 'white',  
   },
   container1:{
     flex:1,

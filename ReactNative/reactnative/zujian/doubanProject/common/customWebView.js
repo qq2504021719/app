@@ -21,7 +21,7 @@ import {
   WebView, 
 } from 'react-native';
 
-var Header = require('./Header');
+var Header = require('./header');
 
 var CustomWebView = React.createClass({
 	render:function(){
@@ -29,15 +29,13 @@ var CustomWebView = React.createClass({
 			<View style={{backgroundColor:"white",flex:1,}}>
 				<Header navigator={this.props.navigator} initObj={{
 					backName:this.props.backName,
-					BarTitle:this.props.BarTitle
+					barTitle:this.props.barTitle
 				}}/>
 				<WebView 
 				startInLoadingState={true}
 				contentInset={{top:-44,bottom:-120,}}
-				source={{url:this.props.url}}
+				source={{uri:this.props.url}}
 				/>
-				}
-				}
 			</View>
 		);
 	}
