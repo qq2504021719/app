@@ -103,18 +103,11 @@ var BookList = React.createClass({
 					initialListSize={10} 
 					renderRow={this._renderRow} 
 					renderSeparator={this._renderSeparator}
-					onEndReached={this._onEndReached}
-					onEndReachedThreshold={0}
 					/> 
 					: Util.loading
 				}
 			</ScrollView>
 		);
-	},
-	_onEndReached:function(){
-		if(this.state.dataSource != 0){
-			alert('123123');
-		}
 	},
 	componentDidMount:function(){
 		// 请求数据
