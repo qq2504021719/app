@@ -28,4 +28,6 @@
 ### reactnative-zujian-doubanProject 项目一 图书列表,电影列表,对应详情页查看(数据网络请求,豆瓣开发接口)
 ### reactnative-zujian-doubanProject-common-customWebView WebView组件使用,根据url展示网页信息(组件封装在common,调用在movie里面)
 
+### reactnative-zujian-doubanProjectFlatlist 项目一改版,listview改成Flatlist
+
 

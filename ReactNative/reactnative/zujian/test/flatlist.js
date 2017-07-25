@@ -39,15 +39,20 @@ var data = [
 ];
 
 var FlatListExample = React.createClass({
+  _renderItem:function({item}){
+    return (
+      <View style={styles.item}><View style={styles.imageContainer}><Image style={styles.image} source={{uri:item.uri}} /></View><Text style={styles.text}>{item.key}</Text></View>
+    );
+  },
   render:function(){
     return (
       <View style={{flex:1,margin:20,}}>
         <FlatList
           data={data}
-          renderItem={({item}) => <View style={styles.item}><View style={styles.imageContainer}><Image style={styles.image} source={{uri:item.uri}} /></View><Text style={styles.text}>{item.key}</Text></View>}
+          renderItem={this._renderItem}
           getItemLayout={(data, index) => ( {length:120, offset: 40 * index, index} )}
           onEndReached = {this._onEndReached}
-          onEndReachedThreshold = {0}
+          onEndReachedThreshold = {0.1}
         />
       </View>
     );
