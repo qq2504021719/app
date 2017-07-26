@@ -28,6 +28,7 @@ var BookItem = require('./book_item');
 // 对应页面详情 
 var BookDetail = require('./book_detail');
 
+
 var BookList = React.createClass({
 	getInitialState:function(){
 		return {
@@ -96,7 +97,9 @@ var BookList = React.createClass({
 					data={this.state.dataSource}
 			        renderItem={this._renderItem}
 			        getItemLayout={(data, index) => ( {length:120, offset: 40 * index, index} )}
-			        onEndReached = {this._onEndReached}
+			        onEndReached = {(info) => {
+                            alert("滑动到底部了");
+                        } }
 			        onEndReachedThreshold = {0.1}
 					/> 
 					: Util.loading
@@ -104,7 +107,7 @@ var BookList = React.createClass({
 			</ScrollView>
 		);
 	},
-	componentDidMount:function(){
+	componentWillMount:function(){
 		// 请求数据
 		this.getData();
 	},
@@ -114,7 +117,7 @@ var BookList = React.createClass({
 	},
 	// 页面到滑动到底部
 	_onEndReached:function(){
-		alert('123123');
+		// alert('123123');
 	}
 });
 
