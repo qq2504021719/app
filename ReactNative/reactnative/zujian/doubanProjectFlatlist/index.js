@@ -98,6 +98,8 @@ class toutiao extends Component {
   
    /** 
    自定义tabbar 
+  {this.renderTabView('关注','Follow','关注板块',false)}  
+  {this.renderTabView('我的','Mine','我的板块',false)}  
    **/  
   tabBarView(){  
     return (  
@@ -106,8 +108,7 @@ class toutiao extends Component {
       >  
       {this.renderTabView('图书','Home',BookList,true)}  
       {this.renderTabView('电影','Video',MovieList,false)}  
-      {this.renderTabView('关注','Follow','关注板块',false)}  
-      {this.renderTabView('我的','Mine','我的板块',false)}  
+
       </TabNavigator>  
     );  
   }  

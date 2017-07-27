@@ -11,33 +11,10 @@ const {
   Image,
 } = ReactNative;
 
-var data = [
-  {key:'a',uri:'http://i-7.vcimg.com/trim/a5c06f84236da8c3081a08bef96cc967313940/trim.jpg'},
-  {key:'b',uri:'http://i-7.vcimg.com/trim/a5c06f84236da8c3081a08bef96cc967313940/trim.jpg'},
-  {key:'c',uri:'http://i-7.vcimg.com/trim/a5c06f84236da8c3081a08bef96cc967313940/trim.jpg'},
-  {key:'d',uri:'http://i-7.vcimg.com/trim/a5c06f84236da8c3081a08bef96cc967313940/trim.jpg'},
-  {key:'e',uri:'http://i-7.vcimg.com/trim/a5c06f84236da8c3081a08bef96cc967313940/trim.jpg'},
-  {key:'f',uri:'http://i-7.vcimg.com/trim/a5c06f84236da8c3081a08bef96cc967313940/trim.jpg'},
-  {key:'g',uri:'http://i-7.vcimg.com/trim/a5c06f84236da8c3081a08bef96cc967313940/trim.jpg'},
-  {key:'h',uri:'http://i-7.vcimg.com/trim/a5c06f84236da8c3081a08bef96cc967313940/trim.jpg'},
-  {key:'i',uri:'http://i-7.vcimg.com/trim/a5c06f84236da8c3081a08bef96cc967313940/trim.jpg'},
-  {key:'j',uri:'http://i-7.vcimg.com/trim/a5c06f84236da8c3081a08bef96cc967313940/trim.jpg'},
-  {key:'k',uri:'http://i-7.vcimg.com/trim/a5c06f84236da8c3081a08bef96cc967313940/trim.jpg'},
-  {key:'m',uri:'http://i-7.vcimg.com/trim/a5c06f84236da8c3081a08bef96cc967313940/trim.jpg'},
-  {key:'l',uri:'http://i-7.vcimg.com/trim/a5c06f84236da8c3081a08bef96cc967313940/trim.jpg'},
-  {key:'n',uri:'http://i-7.vcimg.com/trim/a5c06f84236da8c3081a08bef96cc967313940/trim.jpg'},
-  {key:'o',uri:'http://i-7.vcimg.com/trim/a5c06f84236da8c3081a08bef96cc967313940/trim.jpg'},
-  {key:'p',uri:'http://i-7.vcimg.com/trim/a5c06f84236da8c3081a08bef96cc967313940/trim.jpg'},
-  {key:'q',uri:'http://i-7.vcimg.com/trim/a5c06f84236da8c3081a08bef96cc967313940/trim.jpg'},
-  {key:'u',uri:'http://i-7.vcimg.com/trim/a5c06f84236da8c3081a08bef96cc967313940/trim.jpg'},
-  {key:'v',uri:'http://i-7.vcimg.com/trim/a5c06f84236da8c3081a08bef96cc967313940/trim.jpg'},
-  {key:'w',uri:'http://i-7.vcimg.com/trim/a5c06f84236da8c3081a08bef96cc967313940/trim.jpg'},
-  {key:'ww',uri:'http://i-7.vcimg.com/trim/a5c06f84236da8c3081a08bef96cc967313940/trim.jpg'},
-  {key:'www',uri:'http://i-7.vcimg.com/trim/a5c06f84236da8c3081a08bef96cc967313940/trim.jpg'},
-  {key:'wwww',uri:'http://i-7.vcimg.com/trim/a5c06f84236da8c3081a08bef96cc967313940/trim.jpg'},
-  {key:'wwwww',uri:'http://i-7.vcimg.com/trim/a5c06f84236da8c3081a08bef96cc967313940/trim.jpg'}
-];
+
 var Util = require('./../doubanProjectFlatlist/common/util');
+
+
 var FlatListExample = React.createClass({
   getInitialState:function(){
     return {
