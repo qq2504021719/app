@@ -27,11 +27,13 @@ var BookDetail = require('./book_detail');
 var FlatListExample = React.createClass({
 	getInitialState:function(){
 	return {
-	  loading:false,
+	  loading:false, // 页面加载
+	  footloading:false,//上拉加载
+	  footstr:'数据加载中',
 	  // dataSource
 	  dataSource:'',
 	  // 网络请求状态标识
-	  show:false,
+	  show:false, // 下拉刷新
 	  // 搜索关键字,作用: 1、搜索接口需要设置搜索内容。2.点击搜索按钮时,修改关键字内容,重新请求数据,重新渲染
 	  keywords:" ",
 	  page : 1, // 第几页
@@ -56,6 +58,10 @@ var FlatListExample = React.createClass({
 	Util.getRequest(url,function(data){
 	  // 请求成功回调函数,如果没有相关书籍,要alert提示
 	  if(!data || data.length == 0){
+	  	that.setState({
+	      footstr:'暂无数据'
+	    });
+	  	
 	    return alert("未查询到相关书籍");
 	  }
 	  if(that.state.dataSource != " " && that.state.dataSource != "undefined" && that.state.dataSource.length != 0){
@@ -64,12 +70,14 @@ var FlatListExample = React.createClass({
 	    that.setState({
 	      show:false,
 	      loading:true,
+	      footloading:false,
 	      dataSource:dtats
 	    });
 	  }else{
 	    that.setState({
 	      show:false,
 	      loading:true,
+	      footloading:false,
 	      dataSource:data
 	    });
 	  }
@@ -128,6 +136,7 @@ var FlatListExample = React.createClass({
 				  onRefresh = {this._onRefresh}
 				  refreshing = {this.state.show}
 				  onEndReached = {this._onEndReached}
+				  ListFooterComponent = {this._ListFooterComponent}
 				  onEndReachedThreshold = {0.1}
 				/>
 				</View>
@@ -155,14 +164,21 @@ var FlatListExample = React.createClass({
 	},
 	// 下拉请求数据
 	_onEndReached:function(){
-	if(this.state.dataSource != ''){
-	  var pages = this.state.page+1;
-	  this.setState({
-	    page:pages
-	  });
-	  // 请求数据
-	  this.getData(pages);
-	}
+		if(this.state.dataSource != ''){
+		  var pages = this.state.page+1;
+		  this.setState({
+		    page:pages,
+		    footloading:true
+		  });
+		  // 请求数据
+		  this.getData(pages);
+		}
+	},
+	// 尾部组件
+	_ListFooterComponent:function(){
+		return (
+			<View style={styles.footView}><View><View>{Util.loadingw}</View></View></View>
+		);
 	}
 });
 
@@ -185,6 +201,14 @@ var styles = StyleSheet.create({
     fontSize:25,
     marginLeft:10,
     marginTop:10,
+  },
+  footView:{
+  	height:50,
+  	justifyContent:"center",
+    alignItems:"center",
+  },
+  foottext:{
+  	color:"#CCCCCC",
   }
 }); 
 

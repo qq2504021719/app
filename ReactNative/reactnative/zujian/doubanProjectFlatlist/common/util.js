@@ -38,7 +38,12 @@ var Util = {
 	/*
 	 * loading 效果
 	 */
-	 loading:<ActivityIndicator style={{marginTop:200}} />
+	 loading:<ActivityIndicator style={{marginTop:200}} />,
+
+	 /*
+	 * loading 效果无距离
+	 */
+	 loadingw:<ActivityIndicator color={'#CCCCCC'}  />
 }
 
 module.exports = Util;
