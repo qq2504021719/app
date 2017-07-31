@@ -11,6 +11,7 @@
     "react-native": "0.46.1",
     "react-native-deprecated-custom-components": "^0.1.0",
     "react-native-gifted-listview": "0.0.15",
+    "react-native-image-picker": "^0.26.3",
     "react-native-tab-navigator": "^0.3.3",
     "react-navigation": "^1.0.0-beta.11"
   },

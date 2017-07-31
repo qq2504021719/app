@@ -122,6 +122,7 @@ var FlatListExample = React.createClass({
 	render:function(){
 		return (
 			<View>
+			
 			<SearchBar 
 			placeholder="请输入图片的名称" 
 			onPress={this._searchPress} 
@@ -177,7 +178,7 @@ var FlatListExample = React.createClass({
 	// 尾部组件
 	_ListFooterComponent:function(){
 		return (
-			<View style={styles.footView}><View><View>{Util.loadingw}</View></View></View>
+			<View style={styles.footView}>{Util.loadingw}</View>
 		);
 	}
 });
